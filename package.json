@@ -1,0 +1,24 @@
+{
+  "name": "NoteApp",
+  "version": "1.0.0",
+  "description": "This app is using node.js , mongodb for backend development.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ranjeet1036/NoteApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ranjeet1036/NoteApp/issues"
+  },
+  "homepage": "https://github.com/Ranjeet1036/NoteApp#readme",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "yargs": "^15.4.1"
+  }
+}
