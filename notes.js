@@ -23,6 +23,23 @@ const addNote = function(title, body){
     }
 }
 
+// Creating removeNote function
+const removeNote = function(title){
+    const notes = loadNotes();
+    const notesToKeep = notes.filter(function(note){
+        return note.title != title;
+    });
+
+    if(notes.length != notesToKeep.length){
+        console.log(chalk.green.inverse('Note removed successfully'));
+        saveNote(notesToKeep);
+
+    }else{
+        console.log(chalk.red.inverse('Note title not found'));
+    }
+
+}
+
 const loadNotes = function(){
     try{
         const dataBuffer = fs.readFileSync('note.json');
@@ -41,5 +58,6 @@ const saveNote = function(notes){
 
 
 module.exports = {
-    addNote : addNote
+    addNote : addNote,
+    removeNote : removeNote
 }
