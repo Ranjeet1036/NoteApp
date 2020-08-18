@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 const fs = require('fs');
+const { title } = require('process');
 
 // addNote function as a handler for add command
 const addNote = function(title, body){
@@ -63,10 +64,21 @@ const listNotes = function(){
     });
 }
 
+const readNote = function(title){
+    const notes = loadNotes();
+    const requiredNote = notes.find((note)=>{
+        return note.title == title;
+    });
+    if(!requiredNote){
+        return console.log(chalk.red.inverse("Note not found"));
+    }
+
+    console.log(chalk.green.inverse(requiredNote.body));
+}
 
 module.exports = {
     addNote : addNote,
     removeNote : removeNote,
-    //readNote :readNote,
+    readNote :readNote,
     listNotes : listNotes
 }
